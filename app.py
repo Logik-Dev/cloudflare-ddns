@@ -31,15 +31,15 @@ def handle_fatal_error(msg):
    exit(1)
 
 # cloudflare token must be set
-if (token == None):
+if not token or not token.strip():
     handle_fatal_error(ERROR_NO_TOKEN)
 
 # cloudflare email must be set
-if (email == None):
+if not email or not email.strip():
     handle_fatal_error(ERROR_NO_EMAIL)
 
 # cloudflare domain must be set
-if (domain == None):
+if not domain or not domain.strip():
     handle_fatal_error(ERROR_NO_DOMAIN)
 
 # get current public ip
