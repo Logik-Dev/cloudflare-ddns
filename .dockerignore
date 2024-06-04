@@ -13,6 +13,7 @@
 **/.git
 **/.github
 **/.gitignore
+**/LICENSE
 **/.project
 **/.settings
 **/.toolstarget
@@ -31,5 +32,6 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
+**/*.yml
 LICENSE
 README.md

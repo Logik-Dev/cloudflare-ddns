@@ -1,0 +1,20 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cloudflare-ddns
+  namespace: default
+spec:
+  schedule: '*/5 * * * *'
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: cloudflare-ddns
+              image: ghcr.io/logik-dev/cloudflare-ddns
+              imagePullPolicy: IfNotPresent
+              envFrom:
+                - secretRef:
+                    name: cloudflare-ddns
+          restartPolicy: Never
